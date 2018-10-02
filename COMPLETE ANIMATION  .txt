@@ -1,0 +1,2670 @@
+
+;To Buy Designed PCB and Complete Project 
+; Contact 9988218772 / 9988218770 / 9915529010
+; strobotix.com@gmail.com
+
+
+; CLOCKWISE
+	
+; THIS CODE FOR PROPELLER CLOCK  
+; LED CONNECTED COMMON VCC
+; INTERUPT AT P3.2 ( PIN12 ) 
+; MOTOR ROTATE ANTICLOCK WISE 
+; TYPE STRING IN REVERSE 
+; INSTRUCTION:AT THE END OF STRING PLACE '?'
+; T11,P11,R11 FOR T,P,R IN FIRST LINE
+; SPACE FOR SPACE
+; T22,P22,R22 FOR T,P,R IN SECOND LINE
+; LINE 1 AT P2
+; LINE 2 at P1
+
+
+; DELAY
+; DELAY2 
+; DELAY3 
+; DELAY4 
+; DELAYOM 
+
+;R1,R2---DELAY
+;R3,R4---LOOPS
+;R6,R7---WIPER LOOPS
+;R0,R5---FREE
+
+
+;-----------------------------------------
+							   
+ORG 0000H
+AGAIN:
+
+;----------------------------OM-------------
+
+    MOV R4,#2D
+LOB0:MOV R3,#60D
+LOOP0:
+SETB P3.2
+HIK0:JB P3.2,HIK0
+lcall OM
+DJNZ R3,LOOP0 
+DJNZ R4,LOB0
+
+;-------------------WELCOME TO------------
+
+    MOV R4,#2D
+LOB:MOV R3,#40D
+LOOP:
+SETB P3.2
+HIK:JB P3.2,HIK
+lcall WELCOME
+DJNZ R3,LOOP 
+DJNZ R4,LOB
+
+;------------------STROBOTIX----------------
+     MOV R4,#2D
+LOB3:MOV R3,#40D
+LOOP3:
+SETB P3.2
+HIK3:JB P3.2,HIK3
+lcall STROBOTIX
+DJNZ R3,LOOP3 
+DJNZ R4,LOB3 
+
+;----------SEC-41B,CHANDIGARH--------------- 
+
+ MOV R4,#2D
+LOB4:MOV R3,#40D
+LOOP4:
+SETB P3.2
+HIK4:JB P3.2,HIK4
+lcall ADDRESS
+DJNZ R3,LOOP4 
+DJNZ R4,LOB4 
+
+;-----------WWW.STROBOTIX.COM-------------------
+
+MOV R4,#2D
+LOB5:MOV R3,#40D
+LOOP5:
+SETB P3.2
+HIK5:JB P3.2,HIK5
+lcall WEBSITE
+DJNZ R3,LOOP5 
+DJNZ R4,LOB5
+
+;------MADE BY;-------------------------------
+
+MOV R4,#2D
+LOB6:MOV R3,#40D
+LOOP6:
+SETB P3.2
+HIK6:JB P3.2,HIK6
+lcall MADEBY
+DJNZ R3,LOOP6
+DJNZ R4,LOB6
+
+
+
+;-----------------TEJINDER DEVGON---------------
+MOV R4,#2D
+LOB7:MOV R3,#40D
+LOOP7:
+SETB P3.2
+HIK7:JB P3.2,HIK7
+lcall TEJINDER
+DJNZ R3,LOOP7
+DJNZ R4,LOB7
+
+
+
+;---------------SAKSHI RANA---------------------
+
+MOV R4,#2D
+LOB8:MOV R3,#40D
+LOOP8:
+SETB P3.2
+HIK8:JB P3.2,HIK8
+lcall SAKSHI
+DJNZ R3,LOOP8
+DJNZ R4,LOB8
+
+;--------------JOIN US AT FACEBOOK---------------
+
+MOV R4,#2D
+LOB9:MOV R3,#40D
+LOOP9:
+SETB P3.2
+HIK9:JB P3.2,HIK9
+lcall FACEBOOK
+DJNZ R3,LOOP9
+DJNZ R4,LOB9
+
+;-------------- 9988218770-------------
+
+MOV R4,#2D
+LOB10:MOV R3,#40D
+LOOP10:
+SETB P3.2
+HIK10:JB P3.2,HIK10
+lcall MOBILE1
+DJNZ R3,LOOP10
+DJNZ R4,LOB10
+
+;--------------9988091747--------------
+
+MOV R4,#2D
+LOB11:MOV R3,#40D
+LOOP11:
+SETB P3.2
+HIK11:JB P3.2,HIK11
+lcall MOBILE2
+DJNZ R3,LOOP11
+DJNZ R4,LOB11
+
+;--------------9915529010--------------
+
+MOV R4,#2D
+LOB12:MOV R3,#40D
+LOOP12:
+SETB P3.2
+HIK12:JB P3.2,HIK12
+lcall MOBILE3
+DJNZ R3,LOOP12
+DJNZ R4,LOB12
+
+;--------------SMILEY-------------
+
+MOV R4,#2D
+LOB13:MOV R3,#50D
+LOOP13:
+SETB P3.2
+HIK13:JB P3.2,HIK13
+lcall SMILEY
+DJNZ R3,LOOP13
+DJNZ R4,LOB13
+
+;------------Billy similey-------------------------
+
+MOV R4,#2D
+LOB14:MOV R3,#50D
+LOOP14:
+SETB P3.2
+HIK14:JB P3.2,HIK14
+lcall smilybilli
+DJNZ R3,LOOP14
+DJNZ R4,LOB14
+
+;------------Billy similey with Mooch-------------------------
+
+MOV R4,#2D
+LOB15:MOV R3,#50D
+LOOP15:
+SETB P3.2
+HIK15:JB P3.2,HIK15
+lcall smileybillimooch
+DJNZ R3,LOOP15
+DJNZ R4,LOB15
+
+;------------ WIPER CODE -------------------------
+
+MOV R4,#1D
+LOB16:MOV R3,#3D
+LOOP16:
+SETB P3.2
+HIK16:JB P3.2,HIK16
+lcall WIPER
+DJNZ R3,LOOP16
+DJNZ R4,LOB16
+
+;---------------------------------------------------
+
+
+
+LJMP AGAIN
+
+
+
+;-----------------DONT SEE BELOW CODE--------------------------------------------------------------------------------
+
+;----------------------FUNCTION---------------------------------------
+WELCOME:
+lcall BLANK1
+lcall BLANK1
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+lcall M1
+lcall E1
+lcall BLANK1
+lcall T11
+lcall O1
+RET
+
+STROBOTIX:
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+lcall O1
+lcall T11
+lcall I1
+lcall X1
+RET
+
+
+
+ADDRESS:
+lcall S1
+lcall E1
+lcall C1
+lcall DASH
+lcall FOUR
+lcall ONE
+lcall B1
+lcall COMA 
+lcall C1
+lcall H1
+lcall A1
+lcall N1
+lcall D1
+lcall I1
+lcall G1
+lcall A1
+lcall R11
+lcall H1
+RET
+;---------------------
+
+WEBSITE:
+lcall W1
+lcall W1
+lcall W1
+lcall DOT
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+lcall O1
+lcall T11
+lcall I1
+lcall X1
+lcall DOT
+lcall C1
+lcall O1
+lcall M1
+RET
+
+;---------------------
+MADEBY:
+
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+
+lcall M1
+lcall A1
+lcall D1
+lcall E1
+lcall blank1
+lcall B1
+lcall Y1
+RET
+
+;---------------------
+
+TEJINDER:
+lcall BLANK1
+lcall T11
+lcall E1
+lcall J1
+lcall I1
+lcall N1
+lcall D1
+lcall E1
+lcall R11
+lcall blank1
+lcall D1
+lcall E1
+lcall V1
+lcall G1
+lcall O1
+lcall N1
+RET
+
+;---------------------
+
+SAKSHI:
+lcall BLANK1
+lcall BLANK1
+lcall S1
+lcall A1
+lcall K1
+lcall S1
+lcall H1
+lcall I1
+lcall blank1
+lcall R11
+lcall A1
+lcall N1
+lcall A1
+RET
+
+;---------------------
+FACEBOOK:
+lcall J1
+lcall O1
+lcall I1
+lcall N1
+lcall blank1
+lcall U1
+lcall S1
+lcall blank1
+lcall A1
+lcall T11
+lcall blank1
+lcall F1
+lcall A1
+lcall C1
+lcall E1
+lcall B1
+lcall O1
+lcall O1
+lcall K1
+RET
+
+;---------------------
+MOBILE1:
+lcall BLANK1
+lcall BLANK1
+
+lcall NINE
+lcall NINE
+lcall EIGHT
+lcall EIGHT
+lcall TWO
+lcall ONE
+lcall EIGHT
+lcall SEVEN
+lcall SEVEN
+lcall O1
+RET
+
+;---------------------
+MOBILE2:
+lcall BLANK1
+lcall BLANK1
+
+lcall NINE
+lcall NINE
+lcall EIGHT
+lcall EIGHT
+lcall O1
+lcall NINE
+lcall ONE
+lcall SEVEN
+lcall FOUR
+lcall SEVEN
+RET
+
+;---------------------
+MOBILE3:
+lcall BLANK1
+lcall BLANK1
+
+lcall NINE
+lcall NINE
+lcall ONE
+lcall FIVE
+lcall FIVE
+lcall TWO
+lcall NINE
+lcall O1
+lcall ONE
+lcall O1
+RET
+
+;-------OM---------
+om:
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+lcall BLANK1
+
+mov p1, #11100011b 		  ;  11100011b  11111111b
+mov p2, #11111111b		  
+LCALL delayOM  
+mov p1, #11011101b		  ;  11011101b  11111011b
+mov p2, #11111011b		  
+LCALL delayOM 
+mov p1, #10111111b		   ; 10111111b  11111101b
+mov p2, #11111101b	  
+LCALL delayOM 
+mov p1, #10111111b		  ;  10111111b  01111110b
+mov p2, #01111110b		  
+LCALL delayOM 
+mov p1, #10111110b 		  ;  10111110b  10111110b
+mov p2, #10111110b	      
+LCALL delayOM 
+mov p1, #11011101b		  ; 11011101b  11011101b
+mov p2, #11011101b	 
+LCALL delayOM 
+mov p1, #11100010b 		  ; 11100010b  11100011b
+mov p2, #11100011b		  
+LCALL delayOM 
+mov p1, #11111110b 		  ;  11111110b  11111111b
+mov p2, #11111111b		  
+LCALL delayOM 
+mov p1, #11111111b                ; 11111111b  01111110b
+mov p2, #01111110b		 
+LCALL delayOM  
+mov p1, #11111111b		  ; 11111111b  01111101b
+mov p2, #01111101b		 
+LCALL delayOM 	
+mov p1, #11111101b		  ; 11111101b  10111011b
+mov p2, #10111011b		   
+LCALL delayOM 
+mov p1, #11111011b		  ; 11111011b  11011010b
+mov p2, #11011010b		   
+LCALL delayOM 
+mov p1, #11111011b		  ; 11111011b  11011011b
+mov p2, #11011011b	      
+LCALL delayOM 
+mov p1, #11111101b 		  ; 11111101b  10111101b
+mov p2, #10111101b		   
+LCALL delayOM 
+mov p1, #11111110b		  ; 11111110b  01111110b
+mov p2, #01111110b		  
+LCALL delayOM 
+mov p1, #11111111b 		  ;  11110011b  11111111b
+mov p2, #11111111b		  
+LCALL delayOM 	
+ret
+
+;===================SMILEY==========================
+
+smiley:
+
+
+LCALL smileyeye
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+LCALL smileyeye
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+lcall blanks1
+LCALL smileymouth
+clr p2.0
+ret
+
+;=================smilybilli========================
+smilybilli:
+
+LCALL billiear
+LCALL billieye
+
+lcall billiblank
+lcall billiblank
+lcall billiblank
+lcall billiblank
+
+LCALL billieye
+LCALL billiear
+
+lcall billiblank
+lcall billiblank
+lcall billiblank
+lcall billiblank
+lcall billiblank
+lcall billiblank
+clr p2.5
+
+LCALL smilybillimouth
+clr p2.5
+ret
+;--------------------------------------
+
+smileybillimooch:
+
+LCALL billimoochleft
+LCALL billimoochleft
+lcall billiblank
+
+LCALL billiear
+LCALL billieye
+
+lcall billiblank
+lcall billiblank
+
+LCALL billieye
+LCALL billiear
+
+lcall billiblank
+lcall billiblank
+
+LCALL billimoochright
+LCALL billimoochright
+
+
+lcall billiblank
+lcall billiblank
+
+clr p2.5
+
+LCALL smilybillimouth
+clr p2.5
+
+
+ret
+
+
+;-------Smiley database------------
+blanks1:
+mov p2, #11111110b
+lcall delay
+mov p2, #11111110b
+lcall delay		    ; used in smiley loop
+mov p2, #11111110b
+lcall delay
+mov p2, #11111110b
+lcall delay
+mov p2, #11111110b
+lcall delay
+RET
+smileyeye:
+mov p2, #00000110b
+mov p1, #11111000b
+lcall delay		  
+mov p2, #11110110b
+mov p1, #11110111b
+lcall delay
+mov p2, #11110110b
+mov p1, #11110111b
+lcall delay		     ; Smiley eye
+mov p2, #11110110b
+mov p1, #11110111b
+lcall delay
+mov p2, #11110110b
+mov p1, #11110111b
+lcall delay
+mov p2, #11110110b
+mov p1, #11110111b
+lcall delay
+mov p2, #00000110b
+mov p1, #11111000b
+lcall delay
+mov p1, #11111111b
+mov p2, #11111110b
+ret
+
+smileymouth:
+clr p2.0
+mov p1, #00000111b
+lcall delay3	
+mov p1, #10111011b
+lcall delay3	
+mov p1, #11011101b
+lcall delay3		  
+mov p1, #11101110b
+lcall delay3
+mov p1, #11101110b
+lcall delay3		  ; O
+mov p1, #11101110b
+lcall delay3
+mov p1, #11101110b
+lcall delay3
+mov p1, #11101110b
+lcall delay3
+mov p1, #11101110b
+lcall delay3
+mov p1, #11011101b
+lcall delay3	
+mov p1, #10111011b
+lcall delay3	
+mov p1, #00000111b
+lcall delay3
+mov p1, #11111111b
+lcall delay3
+ret
+
+;XXXXXXXXXXXXXXXXXXX end of smiley database XXXXXXXXXXXXXXXXXXXXXXX
+
+;============= smili billi database ===============================
+billimoochright:
+mov p2, #11011111b
+mov p1, #00000111b  ;1
+lcall delay4
+mov p2, #11011111b
+mov p1, #11111011b  ;2
+lcall delay4
+mov p1, #11111101b  ;3
+mov p2, #11011111b
+lcall delay4
+mov p1, #11111110b  ;4
+mov p2, #11011111b
+lcall delay4
+mov p1, #0ffh       ;5
+mov p2, #01011111b
+lcall delay4
+mov p1, #0ffh       ;6
+mov p2, #10011111b
+lcall delay4
+mov p1, #0ffh       ;7
+mov p2, #11011111b
+lcall delay4
+mov p1, #0ffh       ;8
+mov p2, #11001111b
+lcall delay4
+mov p1, #0ffh       ;9
+mov p2, #11010111b
+lcall delay4
+mov p1, #0ffh       ;10
+mov p2, #11011011b
+lcall delay4
+mov p1, #0ffh       ;11
+mov p2, #11011101b
+lcall delay4
+mov p1, #0ffh       ;12
+mov p2, #11011110b
+lcall delay4
+mov p1, #0ffh       ;11
+mov p2, #11011110b
+ret
+
+billimoochleft:
+mov p1, #0ffh       ;12
+mov p2, #11011110b
+mov p1, #0ffh       ;11
+mov p2, #11011101b
+lcall delay4
+mov p1, #0ffh       ;10
+mov p2, #11011011b
+lcall delay4
+mov p1, #0ffh       ;9
+mov p2, #11010111b
+lcall delay4
+mov p1, #0ffh       ;8
+mov p2, #11001111b
+lcall delay4
+mov p1, #0ffh       ;7
+mov p2, #11011111b
+lcall delay4
+mov p1, #0ffh       ;6
+mov p2, #10011111b
+lcall delay4
+mov p1, #0ffh       ;5
+mov p2, #01011111b
+lcall delay4
+mov p1, #11111110b  ;4
+mov p2, #11011111b
+lcall delay4
+mov p1, #11111101b  ;3
+mov p2, #11011111b
+lcall delay4
+mov p2, #11011111b
+mov p1, #11111011b  ;2
+lcall delay4
+mov p2, #11011111b
+mov p1, #00000111b  ;1
+lcall delay4
+mov p1, #0ffh       ;11
+mov p2, #11011110b
+ret
+
+billiblank:
+mov p2, #11011111b
+lcall delay
+mov p2, #11011111b
+lcall delay
+mov p2, #11011111b
+lcall delay
+mov p2, #11011111b
+lcall delay
+mov p2, #11011111b
+lcall delay
+RET
+
+billieye:
+mov p2, #11011111b
+mov p1, #10000000b ;7
+lcall delay		  
+mov p2, #11011111b
+mov p1, #10111110b ;8
+lcall delay
+mov p2, #11011111b
+mov p1, #10111110b ;8
+lcall delay
+mov p2, #11011111b
+mov p1, #10111110b ;8
+lcall delay
+mov p2, #11011111b
+mov p1, #10111110b ;8
+lcall delay
+mov p2, #11011111b
+mov p1, #10111110b ;8
+lcall delay
+mov p2, #11011111b
+mov p1, #10000000b ;7
+lcall delay
+mov p2,#11011111b
+mov p1,#11111111b  ;1
+LCALL delay
+	
+ret
+
+smilybillimouth:
+mov p1, #11011111b
+lcall delay3	
+mov p1, #11101111b
+lcall delay3	
+mov p1, #11110111b
+lcall delay3		  
+mov p1, #11111011b
+lcall delay3
+mov p1, #11111011b
+lcall delay3		  
+mov p1, #11111011b
+lcall delay3
+mov p1, #11111011b
+lcall delay3
+mov p1, #11111011b
+lcall delay3
+mov p1, #11111011b
+lcall delay3
+mov p1, #11110111b
+lcall delay3	
+mov p1, #11101111b
+lcall delay3	
+mov p1, #11011111b
+lcall delay3
+mov p1, #11111111b
+lcall delay3
+ret
+
+billiear:
+mov p2,#11011111b
+mov p1,#11111111b  ;1
+LCALL delay
+mov p2,#11001111b
+mov p1,#11111111b  ;2
+LCALL delay
+mov p2,#11010111b
+mov p1,#11111111b  ;3
+LCALL delay
+mov p2,#11011011b  ;4
+mov p1,#11111111b
+LCALL delay
+mov p2,#11011101b
+mov p1,#11111111b  ;5
+LCALL delay
+mov p2,#11011110b  ;6
+mov p1,#11111111b
+LCALL delay
+mov p2,#11011101b
+mov p1,#11111111b  ;5
+LCALL delay
+mov p2,#11011011b  ;4
+mov p1,#11111111b
+LCALL delay
+mov p2,#11010111b
+mov p1,#11111111b  ;3
+LCALL delay
+mov p2,#11001111b
+mov p1,#11111111b  ;2
+LCALL delay
+mov p2,#11011111b
+mov p1,#11111111b  ;1
+LCALL delay
+ret
+
+;==============WIPER=================================================
+
+WIPER:
+   ;--------WELCOME TO -------
+LCALL X00	;
+LCALL X11	;
+LCALL X22
+LCALL X3
+LCALL X4
+LCALL X5
+LCALL X6
+LCALL X7
+LCALL X8
+LCALL X9
+LCALL X10
+LCALL X10
+LCALL X9	
+LCALL X8
+LCALL X7
+LCALL X6
+LCALL X5
+LCALL X4
+LCALL X3
+LCALL X22
+LCALL X11
+LCALL X00
+
+;--X30----STROBOTIX
+
+LCALL X31
+LCALL X32
+LCALL X33
+LCALL X34
+LCALL X35
+LCALL X36
+LCALL X37
+LCALL X38
+LCALL X39
+LCALL X38
+LCALL X37
+LCALL X36
+LCALL X35
+LCALL X34
+LCALL X33
+LCALL X32
+LCALL X00
+
+RET
+
+
+;-------------------------------------------------------------------
+
+
+
+
+
+
+
+;xxxxxxxxxxxxxxxxxxxend of smilibilli database====================
+
+
+
+
+
+
+;====================dELAYS=========================================
+			
+delay:
+MOV R1, #1d				; single line delay  or STANDARD DELAY
+go2:MOV R2, #130d	    ; dELAY			 use 1,90 for Reed switch and more for Hall Switch 
+go:djnz r2, go
+djnz r1, go2
+ret
+
+delayOM:
+MOV R1, #1d
+go2K:MOV R2, #170d	    ; dELAY used in OM character
+goK:djnz r2, goK
+djnz r1, go2K
+ret
+
+ret
+
+delay3:					 ; used in smiley mouth  
+MOV R1, #2d				  
+go23:MOV R2, #180d	    ; dELAY			 
+go3:djnz r2, go3
+djnz r1, go23
+ret
+
+delay2:					 ; used in line-2 Font i.e port 1
+MOV R1, #1d				  
+go26:MOV R2, #130d	    ; dELAY			 
+go36:djnz r2, go36
+djnz r1, go26
+ret
+
+delay4:					 ; used in line-2 Font i.e port 1
+MOV R1, #1d				  
+go24:MOV R2, #100d	    ; dELAY			 
+go34:djnz r2, go34
+djnz r1, go24
+ret
+
+
+
+;XXXXXXXXXXXXX END OF DELAYS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+;==================WIPER DATA BASE===========================
+
+
+;--------------------
+X00:
+    MOV R7,#2D
+LOB0X:MOV R6,#3D
+LOOP0X:
+SETB P3.2
+HIK0X:JB P3.2,HIK0X
+LCALL SLASH
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+
+DJNZ R6,LOOP0X 
+DJNZ R7,LOB0X
+
+RET
+
+;--------------------
+X11:
+    MOV R7,#2D
+LOBX:MOV R6,#3D
+LOOPX:
+SETB P3.2
+HIKX:JB P3.2,HIKX
+lcall W1
+LCALL SLASH
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+DJNZ R6,LOOPX 
+DJNZ R7,LOBX
+
+RET
+
+;---------2-----------
+X22:
+     MOV R7,#1D
+LOB3X:MOV R6,#2D
+LOOP3X:
+SETB P3.2
+HIK3X:JB P3.2,HIK3X
+lcall W1
+lcall E1
+LCALL SLASH
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+DJNZ R6,LOOP3X 
+DJNZ R7,LOB3X
+ 
+RET
+
+
+;--------3--------- 
+X3:
+ MOV R7,#1D
+LOB4X:MOV R6,#2D
+LOOP4X:
+SETB P3.2
+HIK4X:JB P3.2,HIK4X
+lcall W1
+lcall E1
+lcall L1
+LCALL SLASH
+DJNZ R6,LOOP4X 
+DJNZ R7,LOB4X 
+RET
+
+;-------4----------
+X4:
+MOV R7,#1D
+LOB5X:MOV R6,#2D
+LOOP5X:
+SETB P3.2
+HIK5X:JB P3.2,HIK5X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+LCALL SLASH
+DJNZ R6,LOOP5X 
+DJNZ R7,LOB5X
+RET
+;--------5--------
+X5:
+MOV R7,#1D
+LOB6X:MOV R6,#2D
+LOOP6X:
+SETB P3.2
+HIK6X:JB P3.2,HIK6X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+LCALL SLASH
+DJNZ R6,LOOP6X
+DJNZ R7,LOB6X
+RET
+
+;-------6---------
+X6:
+MOV R7,#1D
+LOB7X:MOV R6,#2D
+LOOP7X:
+SETB P3.2
+HIK7X:JB P3.2,HIK7X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+lcall M1
+LCALL SLASH
+DJNZ R6,LOOP7X
+DJNZ R7,LOB7X
+RET
+;-------7----------
+X7:
+MOV R7,#1D
+LOB8X:MOV R6,#2D
+LOOP8X:
+SETB P3.2
+HIK8X:JB P3.2,HIK8X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+lcall M1
+lcall E1
+LCALL SLASH
+
+DJNZ R6,LOOP8X
+DJNZ R7,LOB8X
+RET
+;-------8----------
+X8:
+MOV R7,#1D
+LOB9X:MOV R6,#4D
+LOOP9X:
+SETB P3.2
+HIK9X:JB P3.2,HIK9X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+lcall M1
+lcall E1
+LCALL BLANK1
+LCALL SLASH
+
+DJNZ R6,LOOP9X
+DJNZ R7,LOB9X
+RET
+
+;--------------9-------------
+
+X9:
+MOV R7,#1D
+LOB10X:MOV R6,#4D
+LOOP10X:
+SETB P3.2
+HIK10X:JB P3.2,HIK10X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+lcall M1
+lcall E1
+LCALL BLANK1
+lcall T11
+LCALL SLASH
+
+DJNZ R6,LOOP10X
+DJNZ R7,LOB10X
+RET
+;------------------10--------
+X10:
+MOV R7,#1D
+LOB11X:MOV R6,#4D
+LOOP11X:
+SETB P3.2
+HIK11X:JB P3.2,HIK11X
+
+lcall W1
+lcall E1
+lcall L1
+lcall C1
+lcall O1
+lcall M1
+lcall E1
+LCALL BLANK1
+lcall T11
+lcall O1
+LCALL SLASH
+
+DJNZ R6,LOOP11X
+DJNZ R7,LOB11X
+RET
+;------------X31--------------
+
+X31:
+    MOV R7,#2D
+LOB12X:MOV R6,#3D
+LOOP12X:
+SETB P3.2
+HIK12X:JB P3.2,HIK12X
+lcall S1
+LCALL SLASH
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+DJNZ R6,LOOP12X 
+DJNZ R7,LOB12X
+
+RET
+
+;---------32-----------
+X32:
+     MOV R7,#1D
+LOB13X:MOV R6,#2D
+LOOP13X:
+SETB P3.2
+HIK13X:JB P3.2,HIK13X
+lcall S1
+lcall T11
+LCALL SLASH
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+LCALL BLANK1
+DJNZ R6,LOOP13X 
+DJNZ R7,LOB13X
+ 
+RET
+
+
+;--------33--------- 
+X33:
+ MOV R7,#1D
+LOB14X:MOV R6,#2D
+LOOP14X:
+SETB P3.2
+HIK14X:JB P3.2,HIK14X
+lcall S1
+lcall T11
+lcall R11
+LCALL SLASH
+DJNZ R6,LOOP14X 
+DJNZ R7,LOB14X 
+RET
+
+;-------34----------
+X34:
+MOV R7,#1D
+LOB15X:MOV R6,#2D
+LOOP15X:
+SETB P3.2
+HIK15X:JB P3.2,HIK15X
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+LCALL SLASH
+DJNZ R6,LOOP15X
+DJNZ R7,LOB15X
+RET
+;--------35--------
+X35:
+MOV R7,#1D
+LOB16X:MOV R6,#2D
+LOOP16X:
+SETB P3.2
+HIK16X:JB P3.2,HIK16X
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+LCALL SLASH
+
+DJNZ R6,LOOP16X
+DJNZ R7,LOB16X
+RET
+
+;-------36---------
+X36:
+MOV R7,#1D
+LOB17X:MOV R6,#2D
+LOOP17X:
+SETB P3.2
+HIK17X:JB P3.2,HIK17X
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+lcall O1
+LCALL SLASH
+
+DJNZ R6,LOOP17X
+DJNZ R7,LOB17X
+RET
+;-------37----------
+X37:
+MOV R7,#1D
+LOB18X:MOV R6,#2D
+LOOP18X:
+SETB P3.2
+HIK18X:JB P3.2,HIK18X
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+lcall O1
+lcall T11
+LCALL SLASH
+
+DJNZ R6,LOOP18X
+DJNZ R7,LOB18X
+RET
+
+;-------38----------
+X38:
+MOV R7,#1D
+LOB19X:MOV R6,#2D
+LOOP19X:
+SETB P3.2
+HIK19X:JB P3.2,HIK19X
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+lcall O1
+lcall T11
+lcall I1
+LCALL SLASH
+
+DJNZ R6,LOOP19X
+DJNZ R7,LOB19X
+RET
+;-----39---------
+X39:
+MOV R7,#2D
+LOB20X:MOV R6,#20D
+LOOP20X:
+SETB P3.2
+HIK20X:JB P3.2,HIK20X
+
+lcall S1
+lcall T11
+lcall R11
+lcall O1
+lcall B1
+lcall O1
+lcall T11
+lcall I1
+lcall X1
+LCALL SLASH
+
+DJNZ R6,LOOP20X
+DJNZ R7,LOB20X
+RET
+
+SLASH:
+mov p2, #00000000b
+mov p1, #00000000b
+lcall delay
+mov p2, #11111111B
+mov p1, #11111111b	  
+lcall delay
+RET
+
+
+;XXXXXXXXXXXXXX END OF WIPER DATA BASE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+A1: 
+mov p2, #10000011b
+lcall delay
+mov p2, #11110101b;A
+lcall delay
+mov p2, #11110110b
+lcall delay
+mov p2, #11110101b
+lcall delay
+mov p2, #10000011b		  
+lcall delay
+lcall SPACE
+RET
+
+A2: 
+mov p1, #10000011b
+lcall delay2
+mov p1, #11110101b		  ; A
+lcall delay2
+mov p1, #11110110b
+lcall delay2
+mov p1, #11110101b
+lcall delay2
+mov p1, #10000011b		  
+lcall delay2
+lcall SPACE2
+RET
+
+B1:
+mov p2, #10000000b
+lcall delay
+mov p2, #10110110b; B
+lcall delay
+mov p2, #10110110b
+lcall delay
+mov p2, #10110110b
+lcall delay
+mov p2, #11001001b		  
+lcall delay
+lcall SPACE
+RET
+B2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #10110110b ; B
+lcall delay2
+mov p1, #10110110b
+lcall delay2
+mov p1, #10110110b
+lcall delay2
+mov p1, #11001001b		  
+lcall delay2
+lcall SPACE2
+RET
+
+
+
+C1:
+mov p2, #10000001b
+lcall delay
+mov p2, #10111110b ; C
+lcall delay
+mov p2, #10111110b
+lcall delay
+mov p2, #10111110b
+lcall delay
+mov p2, #10111110b		  
+lcall delay
+lcall SPACE
+RET
+
+C2:
+mov p1, #10000001b
+lcall delay2
+mov p1, #10111110b; C
+lcall delay2
+mov p1, #10111110b
+lcall delay2
+mov p1, #10111110b
+lcall delay2
+mov p1, #10111110b	  
+lcall delay2
+lcall SPACE2
+RET
+
+
+D1:
+mov p2, #10000000b
+lcall delay
+mov p2, #10111110b ; D
+lcall delay
+mov p2, #10111110b
+lcall delay
+mov p2, #10111110b
+lcall delay
+mov p2, #11000001b		  
+lcall delay
+lcall SPACE
+RET
+
+D2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #10111110b; D
+lcall delay2
+mov p1, #10111110b
+lcall delay2
+mov p1, #10111110b
+lcall delay2
+mov p1, #11000001b	  
+lcall delay2
+lcall SPACE2
+RET
+
+E1:
+mov p2, #10000000b
+lcall delay
+mov p2, #10110110b  ; E
+lcall delay
+mov p2, #10110110b
+lcall delay
+mov p2, #10110110b
+lcall delay
+mov p2, #10111111b
+		  
+lcall delay
+lcall SPACE
+RET
+E2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #10110110b ; E
+lcall delay2
+mov p1, #10110110b
+lcall delay2
+mov p1, #10110110b
+lcall delay2
+mov p1, #10111111b		  
+lcall delay2
+lcall SPACE2
+RET
+
+
+F1:
+mov p2, #10000000b
+lcall delay
+mov p2, #11110110b		  ; F
+lcall delay
+mov p2, #11110110b
+lcall delay
+mov p2, #11110110b
+lcall delay
+mov p2, #11110110b		  
+lcall delay
+lcall SPACE
+RET
+F2:
+mov p1, #10000000b
+
+lcall delay2
+mov p1, #11110110b; F
+lcall delay2
+mov p1, #11110110b
+lcall delay2
+mov p1, #11110110b
+lcall delay2
+mov p1, #11110110b		  
+lcall delay2
+lcall SPACE2
+RET
+
+G1:
+mov p2, #11000001b
+lcall delay
+mov p2, #10111110b ; G
+lcall delay
+mov p2, #10100110b
+lcall delay
+mov p2, #10110110b
+lcall delay
+mov p2, #11000110b	  
+lcall delay
+lcall SPACE
+RET
+
+G2:
+mov p1, #11000001b
+lcall delay2
+mov p1, #10111110b ; G
+lcall delay2
+mov p1, #10100110b
+lcall delay2
+mov p1, #10110110b
+lcall delay2
+mov p1, #11000110b		  
+lcall delay2
+lcall SPACE2
+RET
+
+
+H1:
+mov p2, #10000000b ;H
+lcall delay
+mov p2 ,#11110111b
+lcall delay 
+mov p2 ,#11110111b
+lcall delay
+mov p2 ,#11110111b
+lcall delay
+mov p2,#10000000b
+lcall delay
+lcall SPACE
+RET
+H2:
+mov p1,#10000000b		  ;H
+lcall delay2
+mov p1 ,#11110111b
+lcall delay2
+mov p1 ,#11110111b
+lcall delay2
+mov p1 ,#11110111b
+lcall delay2
+mov p1, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+I1:
+mov p2, #10000000b		  ;  I 	  
+lcall delay
+lcall SPACE
+RET
+
+I2:
+mov p1, #10000000b		  ;  I 	  
+lcall delay2
+lcall SPACE2
+RET
+
+
+J1:
+mov p2, #11001111b ;J
+lcall delay
+mov p2 ,#10111111b
+lcall delay
+mov p2 ,#10111111b
+lcall delay
+mov p2 ,#10111111b
+lcall delay
+mov p2 ,#11000000b
+lcall delay
+lcall SPACE
+RET
+J2:
+mov p1, #11001111b ;J
+lcall delay2
+mov p1 ,#10111111b
+lcall delay2
+mov p1 ,#10111111b
+lcall delay2
+mov p1 ,#10111111b
+lcall delay2
+mov p1 ,#11000000b
+lcall delay2
+lcall SPACE2
+RET
+
+K1:
+mov p2, #10000000b ;K
+lcall delay
+mov p2 ,#11101011b
+lcall delay
+mov p2 ,#11011101b
+lcall delay
+mov p2 ,#10111110b
+lcall delay
+mov p2 ,#11111111b
+lcall delay
+lcall SPACE
+RET
+K2:
+mov p1, #10000000b ;K
+lcall delay2
+mov p1 ,#11101011b
+lcall delay2
+mov p1 ,#11011101b
+lcall delay2
+mov p1 ,#10111110b
+lcall delay2
+mov p1 ,#11111111b
+lcall delay2
+lcall SPACE2
+RET
+
+L1:
+mov p2, #10000000b
+lcall delay
+mov p2, #10111111b
+lcall delay		    ; L
+mov p2, #10111111b
+lcall delay
+mov p2, #10111111b
+lcall delay
+mov p2, #10111111b
+lcall delay
+lcall SPACE
+RET
+L2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #10111111b
+lcall delay2	    ; L
+mov p1, #10111111b
+lcall delay2
+mov p1, #10111111b
+lcall delay2
+mov p1, #10111111b
+lcall delay2
+lcall SPACE2
+RET
+
+M1:
+mov p2, #10000000b
+lcall delay
+mov p2, #11111101b
+lcall delay		    ; M
+mov p2, #11111011b
+lcall delay
+mov p2, #11111101b
+lcall delay
+mov p2, #10000000b
+lcall delay
+lcall SPACE
+RET
+M2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #11111101b
+lcall delay2		    ; M
+mov p1, #11111011b
+lcall delay2
+mov p1, #11111101b
+lcall delay2
+mov p1, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+N1:
+mov p2, #10000000b
+lcall delay
+mov p2, #11110111b
+lcall delay		    ; N
+mov p2, #11101111b
+lcall delay
+mov p2, #11011111b
+lcall delay
+mov p2, #10000000b
+lcall delay
+lcall SPACE
+RET
+N2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #11110111b
+lcall delay2		    ; N
+mov p1, #11101111b
+lcall delay2
+mov p1, #11011111b
+lcall delay2
+mov p1, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+O1:
+mov p2, #10000000b
+lcall delay		  
+mov p2, #10111110b
+lcall delay
+mov p2, #10111110b
+lcall delay		  ; O
+mov p2, #10111110b
+lcall delay
+mov p2, #10000000b
+lcall delay
+lcall SPACE
+RET
+O2:
+mov p1, #10000000b
+lcall delay2		  
+mov p1, #10111110b
+lcall delay2
+mov p1, #10111110b
+lcall delay2		  ; O
+mov p1, #10111110b
+lcall delay2
+mov p1, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+P11:
+mov p2, #10000000b
+lcall delay
+mov p2, #11110110b		  
+lcall delay
+mov p2, #11110110b
+lcall delay		  ; P
+mov p2, #11110110b
+lcall delay
+mov p2, #11111001b
+lcall delay
+lcall SPACE
+RET
+P22:
+mov p1, #10000000b
+lcall delay2		  
+mov p1, #11110110b
+lcall delay2
+mov p1, #11110110b
+lcall delay2		  ; P
+mov p1, #11110110b
+lcall delay2
+mov p1, #11111001b
+lcall delay2
+lcall SPACE2
+RET
+
+Q1:
+mov p2, #11000001b
+lcall delay
+mov p2, #10111110b		  
+lcall delay
+mov p2, #10101110b
+lcall delay		  ; Q
+mov p2, #10011110b
+lcall delay
+mov p2, #11000001b
+lcall delay
+lcall SPACE
+RET
+Q2:
+mov p1, #11000001b
+lcall delay2
+mov p1, #10111110b		  
+lcall delay2
+mov p1, #10101110b
+lcall delay2		  ; Q
+mov p1, #10011110b
+lcall delay2
+mov p1, #11000001b
+lcall delay2
+lcall SPACE2
+RET
+
+R11:
+mov p2, #10000000b
+lcall delay
+mov p2, #11110110b		  
+lcall delay
+mov p2, #11100110b
+lcall delay		    ; R11
+mov p2, #11010110b
+lcall delay
+mov p2, #10111001b
+lcall delay
+lcall SPACE
+RET
+R22:
+mov p1, #10000000b
+lcall delay2
+mov p1, #11110110b		  
+lcall delay2
+mov p1, #11100110b
+lcall delay2	    ; R11
+mov p1, #11010110b
+lcall delay2
+mov p1, #10111001b
+lcall delay2
+lcall SPACE2
+RET
+
+S1:
+mov p2, #11011001b
+lcall delay		  
+mov p2, #10110110b
+lcall delay
+mov p2, #10110110b
+lcall delay		  ; S
+mov p2, #10110110b
+lcall delay
+mov p2, #11001101b
+lcall delay
+lcall SPACE
+RET
+
+S2:
+mov p1, #11011001b
+lcall delay2		  
+mov p1, #10110110b
+lcall delay2
+mov p1, #10110110b
+lcall delay2		  ; S
+mov p1, #10110110b
+lcall delay2
+mov p1, #11001101b
+lcall delay2
+lcall SPACE2
+RET
+
+T11:
+  mov p2, #11111110b
+lcall delay		  
+mov p2, #11111110b
+lcall delay
+mov p2, #10000000b
+lcall delay		  ; T
+mov p2, #11111110b
+lcall delay
+mov p2, #11111110b
+lcall delay
+lcall SPACE
+RET
+T22:
+  mov p1, #11111110b
+lcall delay2	  
+mov p1, #11111110b
+lcall delay2
+mov p1, #10000000b
+lcall delay2		  ; T
+mov p1, #11111110b
+lcall delay2
+mov p1, #11111110b
+lcall delay2
+lcall SPACE2
+RET
+
+U1:
+mov p2, #10000000b
+lcall delay
+mov p2, #10111111b		  ; U
+lcall delay
+mov p2, #10111111b		 
+lcall delay
+mov p2, #10111111b		                                                                        
+lcall delay
+mov p2, #10000000b		  
+lcall delay
+lcall SPACE
+RET
+U2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #10111111b		  ; U
+lcall delay2
+mov p1, #10111111b		 
+lcall delay2
+mov p1, #10111111b		                                                                        
+lcall delay2
+mov p1, #10000000b		  
+lcall delay2
+lcall SPACE2
+RET
+
+
+V1:
+mov p2, #11110000b
+lcall delay		  
+mov p2, #11001111b
+lcall delay
+mov p2, #10111111b
+lcall delay		  ; V
+mov p2, #11001111b
+lcall delay
+mov p2, #11110000b
+lcall delay
+lcall SPACE
+RET
+
+
+V2:
+mov p1, #11110000b
+lcall delay2		  
+mov p1, #11001111b
+lcall delay2
+mov p1, #10111111b
+lcall delay2		  ; V
+mov p1, #11001111b
+lcall delay2
+mov p1, #11110000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+W1:
+mov p2, #10000000b
+lcall delay
+mov p2, #11011111b
+lcall delay		    ; W
+mov p2, #11101111b
+lcall delay
+mov p2, #11011111b
+lcall delay
+mov p2, #10000000b
+lcall delay
+lcall SPACE
+RET
+W2:
+mov p1, #10000000b
+lcall delay2
+mov p1, #11011111b
+lcall delay2		    ; W
+mov p1, #11101111b
+lcall delay2
+mov p1, #11011111b
+lcall delay2
+mov p1, #10000000b
+lcall delay2
+lcall SPACE2
+RET 
+
+X1:
+mov p2, #10011100b
+lcall delay
+mov p2, #11101011b
+lcall delay		    ; X
+mov p2, #11110111b
+lcall delay
+mov p2, #11101011b
+lcall delay
+mov p2, #10011100b
+lcall delay
+lcall SPACE
+RET
+X2:
+mov p1, #10011100b
+lcall delay2
+mov p1, #11101011b
+lcall delay2	    ; X
+mov p1, #11110111b
+lcall delay2
+mov p1, #11101011b
+lcall delay2
+mov p1, #10011100b
+lcall delay2
+lcall SPACE2
+RET
+
+Y1:
+mov p2, #11111100b
+lcall delay
+mov p2, #11111011b
+lcall delay		    ; Y
+mov p2, #10000111b
+lcall delay
+mov p2, #11111011b
+lcall delay
+mov p2, #11111100b
+lcall delay
+lcall SPACE
+RET
+Y2:
+mov p1, #11111100b
+lcall delay2
+mov p1, #11111011b
+lcall delay2	    ; Y
+mov p1, #10000111b
+lcall delay2
+mov p1, #11111011b
+lcall delay2
+mov p1, #11111100b
+lcall delay2
+lcall SPACE2
+RET
+
+Z1:
+mov p2, #10011110b
+lcall delay
+mov p2, #10101110b
+lcall delay		    ; Z
+mov p2, #10110110b
+lcall delay
+mov p2, #10111010b
+lcall delay
+mov p2, #10111100b
+lcall delay
+lcall SPACE
+RET 
+Z2:
+mov p1, #10011110b
+lcall delay2
+mov p1, #10101110b
+lcall delay2		    ; Z
+mov p1, #10110110b
+lcall delay2
+mov p1, #10111010b
+lcall delay2
+mov p1, #10111100b
+lcall delay2
+lcall SPACE2
+RET
+
+ONE:
+mov p2, #10000000b
+lcall delay2           ;1
+lcall SPACE2
+RET
+
+TWO:
+mov p2, #10000110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110000b
+lcall delay2
+lcall SPACE2
+RET
+
+THREE:
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 3
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+FOUR:
+mov p2, #11110000b
+lcall delay2
+mov p2, #11110111b
+lcall delay2		    ; 4
+mov p2, #11110111b
+lcall delay2
+mov p2, #11110111b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+FIVE:
+mov p2, #10110000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 5
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000110b
+lcall delay2
+lcall SPACE2
+RET
+
+SIX:
+mov p2, #10000000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 6
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000110b
+lcall delay2
+lcall SPACE2
+RET
+
+SEVEN:
+mov p2, #11111110b
+lcall delay2
+mov p2, #11111110b
+lcall delay2		    ; 7
+mov p2, #11111110b
+lcall delay2
+mov p2, #11111110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+EIGHT:
+mov p2, #10000000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 8
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+NINE:
+mov p2, #10110000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 9
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+blank1:
+mov p2, #0ffh
+lcall delay
+mov p2, #0ffh
+lcall delay		    ; Z
+mov p2, #0ffh
+lcall delay
+mov p2, #0ffh
+lcall delay
+mov p2, #0ffh
+lcall delay
+lcall SPACE
+RET
+
+blank2:
+mov p2, #0ffh
+lcall delay2
+mov p2, #0ffh
+lcall delay2		    ; Z
+mov p2, #0ffh
+lcall delay2
+mov p2, #0ffh
+lcall delay2
+mov p2, #0ffh
+lcall delay2
+lcall SPACE2
+RET
+
+DASH:
+mov p2, #11101111b
+lcall delay2
+mov p2, #11101111b
+lcall delay2		    ; Z
+mov p2, #11101111b
+lcall delay2
+mov p2, #11101111b
+lcall delay2
+lcall SPACE2
+RET
+
+COMA:
+mov p2, #01111111b
+lcall delay2
+mov p2, #10111111b
+lcall delay2
+mov p2, #11011111b
+lcall delay2           ;1
+lcall SPACE2
+RET
+
+DOT:
+mov p2, #10111111b
+lcall delay2           ;1
+lcall SPACE2
+RET
+
+SPACE:
+mov p2,#0FFH		          ;SPACE
+lcall delay
+lcall delay
+RET
+
+COLON:
+mov p2,#11011101B		       
+lcall delay2
+ACALL SPACE2		          ; THIS IS USED IN TIME FUCTION
+RET
+
+SPACE2:
+mov p2,#0FFH		          ;SPACE
+lcall delay2
+lcall delay2
+RET
+
+
+;***************************** RTC *************************************
+
+TIME:
+lcall blank1
+lcall T11
+lcall I1
+lcall M1
+lcall E1
+lcall DASH
+
+;-------------------HOUR------------------
+MOV R1,#4	   ; HH ADDRESS IN RTC
+MOVX A,@R1
+
+MOV B,A        ; A=56 ,B=56
+SWAP A		   ; A=65			; HH
+ANL A,#0FH	   ; A=05
+ACALL SEND
+
+MOV A,B		   ; A=56
+ANL A,#0FH	   ; A=06
+ACALL SEND
+ACALL COLON	   ; THIS LINE DISPLAY ":"
+;----------------------MINUTE---------
+
+MOV R1,#2	   ; MM ADDRESS IN RTC
+MOVX A,@R1
+
+MOV B,A        ; A=32 ,B=32
+SWAP A		   ; A=23			; MM
+ANL A,#0FH	   ; A=03
+ACALL SEND
+
+MOV A,B		   ; A=32
+ANL A,#0FH	   ; A=02
+ACALL SEND
+ACALL COLON	   ; THIS LINE DISPLAY ":"
+;---------------------SECONDS--------
+
+
+MOV R1,#0	   ; SS ADDRESS IN RTC
+MOVX A,@R1
+
+MOV B,A        ; A=47 ,B=47
+SWAP A		   ; A=74			; MM
+ANL A,#0FH	   ; A=04
+ACALL SEND
+
+MOV A,B		   ; A=47
+ANL A,#0FH	   ; A=07
+ACALL SEND
+;-----------------------------------
+RET
+
+;===========******* END OF TIME DATABASE *******==================
+
+
+
+
+;==============^^^^ DATE DATABASE ^^^^===========================
+
+DATE:
+
+lcall blank1
+lcall D1
+lcall A1
+lcall T11
+lcall E1
+lcall COLON
+
+;-------------------DATE-----------------
+MOV R1,#07	   ; DD ADDRESS IN RTC
+MOVX A,@R1
+
+MOV B,A        ; A=56 ,B=56
+SWAP A		   ; A=65			; DD
+ANL A,#0FH	   ; A=05
+ACALL SEND
+
+MOV A,B		   ; A=56
+ANL A,#0FH	   ; A=06
+ACALL SEND
+ACALL DASH	   ; THIS LINE DISPLAY "-"
+
+;----------------MONTH-----------------
+
+MOV R1,#08	   ; MM ADDRESS IN RTC
+MOVX A,@R1
+
+MOV B,A        ; A=32 ,B=32
+SWAP A		   ; A=23			; YY
+ANL A,#0FH	   ; A=03
+ACALL SEND
+
+MOV A,B		   ; A=32
+ANL A,#0FH	   ; A=02
+ACALL SEND
+ACALL DASH	   ; THIS LINE DISPLAY "-"
+
+
+;--------------YEAR--------------------
+
+MOV R1,#09	   ; YY ADDRESS IN RTC
+MOVX A,@R1
+
+MOV B,A        ; A=47 ,B=47
+SWAP A		   ; A=74			; MM
+ANL A,#0FH	   ; A=04
+ACALL SEND
+
+MOV A,B		   ; A=47
+ANL A,#0FH	   ; A=07
+ACALL SEND
+;-----------------------------------
+RET
+
+;===================*** END OF DATA DATABASE ***==============
+
+
+;================== DAY DATABSE===============================
+DAY:
+
+MOV R1,#06
+MOVX A,@R1		; READ D
+
+FG10:
+CJNE A,#01,FG0
+
+lcall blank1
+lcall blank1
+lcall blank1
+lcall S1
+lcall U1
+lcall N1
+lcall D1
+lcall A1
+lcall Y1
+	
+RET
+  
+
+FG0:
+CJNE A,#02,FG1
+
+lcall blank1
+lcall blank1
+lcall blank1
+lcall M1
+lcall O1
+lcall N1
+lcall D1
+lcall A1
+lcall Y1
+	
+
+RET
+
+
+
+
+FG1:
+CJNE A,#03,FG2
+
+lcall blank1
+lcall blank1
+lcall blank1
+lcall T11
+lcall U1
+lcall E1
+lcall S1
+lcall D1
+lcall A1
+lcall Y1
+
+RET
+
+
+FG2:
+CJNE A,#04,FG3
+
+lcall blank1
+lcall blank1
+lcall W1
+lcall E1
+lcall D1
+lcall N1
+lcall E1
+lcall S1
+lcall D1
+lcall A1
+lcall Y1
+
+RET
+
+
+FG3:
+CJNE A,#05,FG4
+
+lcall blank1
+lcall blank1
+
+lcall T11
+lcall H1
+lcall U1
+lcall R11
+lcall S1
+lcall D1
+lcall A1
+lcall Y1
+
+RET
+
+
+FG4:
+CJNE A,#06,FG5
+
+lcall blank1
+lcall blank1
+lcall blank1
+lcall F1
+lcall R11
+lcall I1
+lcall D1
+lcall A1
+lcall Y1
+
+RET
+
+
+FG5:
+CJNE A,#07,FG6
+
+lcall blank1
+lcall blank1
+lcall S1
+lcall A1
+lcall T11
+lcall U1
+lcall R11
+lcall D1
+lcall A1
+lcall Y1
+
+RET
+
+FG6:
+CJNE A,#07,FG7
+mov p2, #11111110b
+lcall delay2
+mov p2, #11111110b
+lcall delay2		    ; 7
+mov p2, #11111110b
+lcall delay2
+mov p2, #11111110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+FG7:
+LJMP FG10
+
+RET
+
+
+
+
+;===========***** COMPARIOSN ,DISPALY SEND DATA BASE ******=============
+
+SEND:
+DG10:
+CJNE A,#00H,DG0
+mov p2, #10000000b
+lcall delay2		  
+mov p2, #10111110b
+lcall delay2
+mov p2, #10111110b
+lcall delay2		  ; O
+mov p2, #10111110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2	
+RET
+  
+
+DG0:
+CJNE A,#01H,DG1
+mov p2, #10000000b
+lcall delay2           ;1
+lcall SPACE2
+RET
+
+
+
+
+DG1:
+CJNE A,#02H,DG2
+mov p2, #10000110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+DG2:
+CJNE A,#03H,DG3
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 3
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+DG3:
+CJNE A,#04H,DG4
+mov p2, #11110000b
+lcall delay2
+mov p2, #11110111b
+lcall delay2		    ; 4
+mov p2, #11110111b
+lcall delay2
+mov p2, #11110111b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+DG4:
+CJNE A,#05H,DG5
+mov p2, #10110000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 5
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000110b
+lcall delay2
+lcall SPACE2
+RET
+
+
+DG5:
+CJNE A,#06H,DG6
+mov p2, #10000000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 6
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000110b
+lcall delay2
+lcall SPACE2
+RET
+
+DG6:
+CJNE A,#07H,DG7
+mov p2, #11111110b
+lcall delay2
+mov p2, #11111110b
+lcall delay2		    ; 7
+mov p2, #11111110b
+lcall delay2
+mov p2, #11111110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+
+
+DG7:
+CJNE A,#08H,DG8
+mov p2, #10000000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 8
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+
+
+DG8:
+CJNE A,#09H,DG9
+mov p2, #10110000b
+lcall delay2
+mov p2, #10110110b
+lcall delay2		    ; 9
+mov p2, #10110110b
+lcall delay2
+mov p2, #10110110b
+lcall delay2
+mov p2, #10000000b
+lcall delay2
+lcall SPACE2
+RET
+DG9:LJMP DG10
+
+END
